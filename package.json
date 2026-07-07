@@ -55,7 +55,7 @@
     ],
     "iconDefinitions": {
       "lynx-icon": {
-        "iconPath": "./icons/lynx-icon.png"
+        "iconPath": "./icons/lynx-icon.PNG"
       }
     },
     "fileExtensions": {
