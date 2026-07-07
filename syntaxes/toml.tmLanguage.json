@@ -1,0 +1,35 @@
+{
+  "name": "TOML",
+  "scopeName": "source.toml",
+  "patterns": [
+    {
+      "name": "comment.line.number-sign.toml",
+      "match": "#.*$"
+    },
+    {
+      "name": "string.quoted.double.toml",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "constant.numeric.toml",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    {
+      "name": "constant.language.boolean.toml",
+      "match": "\\b(true|false)\\b"
+    },
+    {
+      "name": "keyword.other.section.toml",
+      "match": "\\[.*\\]"
+    },
+    {
+      "name": "entity.name.section.toml",
+      "match": "(?<=\\[)[^\\]]+(?=\\])"
+    },
+    {
+      "name": "variable.other.key.toml",
+      "match": "^[a-zA-Z_][a-zA-Z0-9_]*\\s*(?==)"
+    }
+  ]
+}
