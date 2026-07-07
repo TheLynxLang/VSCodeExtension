@@ -1,0 +1,77 @@
+{
+  "name": "lynx-vscode",
+  "displayName": "Lynx",
+  "description": "Lynx language support — syntax highlighting, LSP, snippets, and custom icons",
+  "version": "0.1.0",
+  "publisher": "TheLynxLang",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheLynxLang/VSCodeExtension"
+  },
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "activationEvents": [
+    "onLanguage:lynx"
+  ],
+  "main": "./src/extension.js",
+  "contributes": {
+    "languages": [
+      {
+        "id": "lynx",
+        "extensions": [".lnx"],
+        "aliases": ["Lynx", "lynx"],
+        "configuration": "./language-configuration.json"
+      },
+      {
+        "id": "lynx-package",
+        "extensions": [".toml"],
+        "filenames": ["lynx.toml"],
+        "aliases": ["Lynx Package", "lynx-package"],
+        "configuration": "./toml-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "lynx",
+        "scopeName": "source.lnx",
+        "path": "./syntaxes/lynx.tmLanguage.json"
+      },
+      {
+        "language": "lynx-package",
+        "scopeName": "source.toml",
+        "path": "./syntaxes/toml.tmLanguage.json"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "lynx",
+        "path": "./snippets/lynx.json"
+      }
+    ],
+    "iconDefinitions": {
+      "lynx-icon": {
+        "iconPath": "./icons/lynx-icon.png"
+      }
+    },
+    "fileExtensions": {
+      "lnx": {
+        "icon": "lynx-icon"
+      }
+    },
+    "configuration": {
+      "title": "Lynx",
+      "properties": {
+        "lynx.lsp.path": {
+          "type": "string",
+          "default": "lynx-lsp",
+          "description": "Path to the Lynx LSP executable"
+        }
+      }
+    }
+  }
+}
