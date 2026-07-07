@@ -1,0 +1,35 @@
+{
+  "name": "Lynx",
+  "scopeName": "source.lnx",
+  "patterns": [
+    {
+      "name": "comment.line.lynx",
+      "match": "#.*$"
+    },
+    {
+      "name": "string.quoted.double.lynx",
+      "begin": "\"",
+      "end": "\""
+    },
+    {
+      "name": "constant.numeric.lynx",
+      "match": "\\b\\d+(\\.\\d+)?\\b"
+    },
+    {
+      "name": "keyword.control.lynx",
+      "match": "\\b(Set|Roar|Hunt|Pounce|If|Else|For|While|Func|Return|Break|Continue|And|Or|Not|KittyPort|Stalk_Pack|LoadLib|Run|Help)\\b"
+    },
+    {
+      "name": "keyword.other.lynx",
+      "match": "\\b(KittyWriteFile|KittyReadFile|KittyFileExists|Paw|KittyRemoveFile|KittyListFiles|KittyReadDir|GetError|KittySplitString|KittyCheckIfStringContains|KittyReplaceString|Trim|Len)\\b"
+    },
+    {
+      "name": "entity.name.function.lynx",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*(?=\\()"
+    },
+    {
+      "name": "variable.other.lynx",
+      "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\b"
+    }
+  ]
+}
