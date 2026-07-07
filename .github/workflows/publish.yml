@@ -1,0 +1,28 @@
+name: Publish to OpenVSX
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install vsce
+        run: npm install -g vsce
+
+      - name: Package extension
+        run: vsce package
+
+      - name: Publish to OpenVSX
+        run: npx ovsx publish -p ${{ secrets.OPENVSX_TOKEN }}
