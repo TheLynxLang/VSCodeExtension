@@ -7,8 +7,15 @@ on:
       - 'v*'
 
 jobs:
+  create-namespace:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create namespace on OpenVSX
+        run: npx ovsx create-namespace TheLynxLang -p ${{ secrets.OPENVSX_TOKEN }}
+
   publish:
     runs-on: ubuntu-latest
+    needs: create-namespace
 
     steps:
       - name: Checkout code
